@@ -3,103 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>أمين ديف | وضع المحاكي الذكي</title>
+    <title>أمين ديف | Amin Dev</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap');
-        body { font-family: 'Tajawal', sans-serif; }
-        .hero-gradient { background: linear-gradient(135deg, #0f172a 0%, #1e40af 100%); }
-        .bot-pulse { animation: pulse-blue 2s infinite; }
-        @keyframes pulse-blue { 0% { shadow: 0 0 0 0 rgba(59, 130, 246, 0.7); } 70% { shadow: 0 0 0 15px rgba(59, 130, 246, 0); } 100% { shadow: 0 0 0 0 rgba(59, 130, 246, 0); } }
+        body { font-family: 'Tajawal', sans-serif; text-align: right; }
+        .hero-bg { background: linear-gradient(180deg, #1e40af 0%, #0f172a 100%); }
     </style>
 </head>
-<body class="bg-slate-50 text-right">
+<body class="bg-white">
 
-    <audio id="snd-success" src="https://assets.mixkit.co/active_storage/sfx/2568/2568-preview.mp3"></audio>
-    <audio id="snd-laugh" src="https://www.soundjay.com/human/sounds/laughter-01.mp3"></audio>
-
-    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur shadow-sm p-4 flex justify-between items-center">
-        <div class="font-bold text-blue-700 text-xl tracking-tighter">أمين ديف</div>
-        <button onclick="handleOrder()" class="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-full text-xs font-bold transition-all shadow-lg active:scale-95">
-            ابدأ مشروعك الآن
-        </button>
+    <nav class="p-4 flex justify-between items-center bg-white shadow-sm sticky top-0 z-50">
+        <div class="flex flex-col">
+            <span class="text-blue-700 font-bold text-xl leading-none">أمين ديف</span>
+            <span class="text-[9px] text-gray-400 font-bold tracking-widest uppercase">Amin Dev</span>
+        </div>
+        <a href="tel:0649692590" class="bg-green-500 text-white px-5 py-2 rounded-full text-xs font-bold shadow-lg flex items-center gap-2 active:scale-95 transition">
+            <span class="text-sm">📞</span> اتصال
+        </a>
     </nav>
 
-    <section class="pt-28 pb-12 px-6 hero-gradient text-white text-center">
-        <div class="max-w-md mx-auto">
-            <h1 class="text-3xl font-bold mb-4">نصمم مستقبلك الرقمي</h1>
-            <p class="text-blue-100 text-sm mb-8">أهلاً بك، أنا أمين، وهدفي هو تحويل فكرتك إلى واقع يدر عليك الأرباح.</p>
-            <img src="gemini2.jpg" class="rounded-[2.5rem] shadow-2xl w-64 mx-auto border-4 border-white/10 mb-6">
-        </div>
-    </section>
-
-    <section class="py-12 px-6">
-        <h2 class="text-center font-bold text-xl mb-10 text-slate-800">ماذا سننجز اليوم؟</h2>
-        <div class="grid grid-cols-1 gap-4">
-            <div onclick="showBotMessage('اختيار رائع! المطاعم هي تخصصي 🍔')" class="p-6 bg-white rounded-2xl shadow-sm border-r-4 border-blue-500 cursor-pointer hover:shadow-md transition">
-                <h3 class="font-bold">تطوير منيو رقمي</h3>
-                <p class="text-gray-400 text-xs mt-1">اجعل زبائنك يطلبون بضغطة زر.</p>
-            </div>
-        </div>
-    </section>
-
-    <div id="mini-amin" class="fixed bottom-6 left-6 z-[100] flex flex-col items-center">
-        <div id="amin-bubble" class="bg-white text-slate-800 text-[11px] font-bold py-3 px-5 rounded-2xl shadow-2xl mb-3 border border-blue-100 max-w-[150px] text-center relative leading-relaxed">
-            مرحباً! أنا "أمين الصغير"، مستشارك التقني. كيف يمكنني مساعدتك؟
-            <div class="absolute -bottom-1 left-1/2 -translate-x-1/2 w-3 h-3 bg-white rotate-45"></div>
-        </div>
+    <section class="hero-bg text-white px-6 py-12 text-center">
+        <h1 class="text-3xl font-bold mb-1">نصمم لك موقعاً يجلب لك الزبائن</h1>
+        <p class="text-blue-300 text-[11px] mb-8 opacity-70 italic tracking-wide">Transforming your ideas into digital reality</p>
         
-        <div onclick="playBotAction()" class="w-20 h-20 bg-blue-600 rounded-full shadow-[0_0_20px_rgba(30,64,175,0.4)] flex items-center justify-center border-4 border-white cursor-pointer hover:scale-110 active:scale-95 transition-all">
-        <div onclick="playBotAction()" class="w-20 h-20 bg-white rounded-full shadow-2xl flex items-center justify-center border-4 border-blue-500 cursor-pointer hover:scale-110 active:scale-95 transition-all">
-            <span class="text-5xl animate-bounce">🤖</span>
+        <p class="text-lg font-bold text-blue-50 mb-1 leading-tight">خبير في تطوير مواقع المقاهي، المتاجر الإلكترونية، والشركات الناشئة.</p>
+        <p class="text-[9px] text-blue-400 uppercase tracking-widest mb-10 opacity-60">Experts in developing café, restaurant, and e-commerce websites</p>
+
+        <div class="relative w-64 h-64 mx-auto mb-10">
+            <img src="gemini2.jpg" class="w-full h-full rounded-[2.5rem] object-cover border-4 border-white/20 shadow-2xl">
         </div>
 
+        <a href="https://wa.me/212649692590" class="inline-block bg-green-500 text-white px-8 py-4 rounded-2xl shadow-2xl mb-4 active:scale-95 transition">
+            <span class="text-xl font-bold block leading-none">واتساب: استشارة مجانية الآن</span>
+            <span class="text-[10px] opacity-80 font-normal block mt-1 tracking-wider uppercase">WhatsApp: Free Consultation Now</span>
+        </a>
+
+        <div class="mt-8">
+            <p class="text-blue-100 text-sm font-bold leading-tight">نحن هنا لنصنع نجاحك الرقمي خطوة بخطوة</p>
+            <p class="text-[9px] text-blue-400 mt-1 uppercase tracking-widest opacity-60">Your success is our digital mission</p>
         </div>
+    </section>
+
+    <section class="py-14 text-center">
+        <h2 class="text-2xl font-bold text-blue-900 mb-1">ماذا أقدم لك؟</h2>
+        <p class="text-[10px] text-blue-400 uppercase tracking-widest font-bold opacity-60">Professional Solutions</p>
+        <div class="mt-8 p-6 border-2 border-dashed border-blue-50 rounded-[2.5rem] text-blue-800 font-bold mx-6">
+            حلول رقمية متكاملة لمشروعك
+        </div>
+    </section>
+
+    <div onclick="alert('مرحباً بك! تواصل معي لبدء العمل.')" class="fixed bottom-6 left-6 z-50 cursor-pointer">
+        <div class="w-14 h-14 bg-blue-600 rounded-full flex items-center justify-center text-3xl shadow-2xl animate-bounce border-2 border-white">🤖</div>
     </div>
 
-    <script>
-        const bubble = document.getElementById('amin-bubble');
-        const successSnd = document.getElementById('snd-success');
-        const laughSnd = document.getElementById('snd-laugh');
-
-        // وظيفة عند الضغط على "ابدأ مشروعك"
-        function handleOrder() {
-            successSnd.play();
-            bubble.innerHTML = "قرار ذكي! 🚀 شكراً لثقتك، سأقوم بنقلك فوراً للتحدث مع أمين الكبير!";
-            bubble.classList.add('text-green-600');
-            setTimeout(() => {
-                window.location.href = "tel:0649692590";
-            }, 2000);
-        }
-
-        // وظيفة المحاكي عند الضغط عليه
-        function playBotAction() {
-            laughSnd.play();
-            bubble.innerHTML = "شكراً على اللمسة! 😄 أنا هنا لأضمن أن مشروعك سيكون الأفضل في السوق!";
-            setTimeout(() => {
-                bubble.innerHTML = "أنا جاهز للعمل! هل نبدأ في برمجة موقعك؟ ✨";
-                bubble.classList.remove('text-green-600');
-            }, 4000);
-        }
-
-        // إظهار رسائل مخصصة
-        function showBotMessage(msg) {
-            successSnd.play();
-            bubble.innerHTML = msg;
-            setTimeout(() => {
-                bubble.innerHTML = "تذكر، الجودة هي شعارنا! 🏆";
-            }, 3000);
-        }
-
-        // ظهور المحاكي بحركة دخول
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                document.getElementById('mini-amin').classList.add('bounce-in');
-                bubble.innerHTML = "أهلاً بك! ✨ أنا مساعدك الذكي، اضغط عليّ لنكتشف المزيد!";
-            }, 1500);
-        });
-    </scripوt>
 </body>
 </html>
 
